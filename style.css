@@ -1,0 +1,101 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 65vh;
+  background: url(img/les.png);
+  background-repeat: repeat-x;
+  border-top: 30px solid rgb(247, 196, 196);
+  border-bottom: 30px solid rgb(247, 196, 196);
+  position: relative;
+
+  animation-name: bezici-les;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#monkey {
+  width: 8%;
+  opacity: 0.9;
+  border-radius: 70px;
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+
+  animation-name: bezici-opice;
+  animation-duration: 15s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+header p {
+  color: red;
+  text-align: center;
+  transform: translateY(30px);
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0;
+
+  animation-name: textik;
+  animation-duration: 15s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: step-end;
+}
+
+/* animation definition */
+@keyframes bezici-les {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes bezici-opice {
+  0% {
+    bottom: -3px;
+    right: 0;
+  }
+  30% {
+    z-index: -1;
+  }
+  50% {
+    bottom: 168px;
+    right: 51%;
+    z-index: -1;
+  }
+  70% {
+    z-index: -1;
+  }
+  100% {
+    bottom: -3px;
+    right: 101%;
+  }
+}
+
+@keyframes textik {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 1;
+  }
+  54% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
